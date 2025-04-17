@@ -52,7 +52,7 @@ betas_df['Expected_March_Return'] = (
 
 # === Risk and Return-to-Risk Calculation ===
 betas_df['Risk'] = abs(betas_df['Beta_Mkt'])
-betas_df = betas_df[betas_df['Expected_March_Return'] > 0].copy()  # filter positive return stocks only
+betas_df = betas_df.copy()  # filter positive return stocks only
 betas_df['Return_to_Risk_Score'] = betas_df['Expected_March_Return'] / (betas_df['Risk'] + 1e-6)
 betas_df['Rank_by_Score'] = betas_df['Return_to_Risk_Score'].rank(ascending=False)
 

@@ -27,7 +27,7 @@ ff_df.columns = ff_df.columns.str.strip()
 ff_df['Date'] = pd.to_datetime(ff_df['Date'])
 
 # === Extract Feb 2025 FF values ===
-ff_feb = ff_df[ff_df['Date'] == '2025-02-28']
+ff_feb = ff_df[ff_df['Date'] == '2025-02-28'] 
 if ff_feb.empty:
     st.error("❌ Feb 2025 factor values not found in FF file.")
     st.stop()
